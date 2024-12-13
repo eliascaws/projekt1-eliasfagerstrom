@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Pom hanterar dependencies i programmet, och används för att instelera de plugin vi kan komma att behöva.  -->
+<!-- Pom hanterar dependencies i programmet, och används för att instalera de plugin vi kan komma att behöva.  -->
 
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
