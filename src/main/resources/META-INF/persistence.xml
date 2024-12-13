@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Persistence.xml bestämmer hur vi interakterar med databasen, och gör att vi kan ställa in till exempel EntityManager -->
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
+             version="3.0">
+    <!--Detta fält sätter våran persistence unit till namnet default, och transaktions typen till JTA för att hantera transaktioner med applikations servern -->
+    <persistence-unit name="default" transaction-type="JTA">
+        <!-- Detta inebär att vi överlåter hanterandet av data source till app servern, i detta programs fall Glassfish -->
+        <jta-data-source>jdbc/__default</jta-data-source>
+        <!--Dessa properties hanterar hur vi bygger våran database och skapar tabeller i den -->
+        <properties>
+            <property name="eclipselink.ddl-generation" value="create-tables"/>
+            <property name="eclipselink.ddl-generation.output-mode" value="database"/>
+            <property name="javax.persistence.schema-generation.database.action" value="create"/>
+        </properties>
+
+    </persistence-unit>
+</persistence>
